@@ -32,7 +32,7 @@ function PopularRecipes() {
             <SplideSlide>
             <div id="card" key={recipe.id}>
               <p>{recipe.title}</p>
-              <img src={recipe.image} />
+              <img src={recipe.image} alt={recipe.title} />
             </div>
             </SplideSlide>
           );
