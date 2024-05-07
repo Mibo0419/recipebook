@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "../components/VegMeals.css";
 import "@splidejs/splide/dist/css/splide.min.css";
 
 function VegMeals() {
@@ -32,16 +33,22 @@ function VegMeals() {
     <div>
       <div id="wrapper">
         <h3>Vegetarian Meals</h3>
+        <Splide options={{
+          perPage: 4, arrows: false, pagination: false, drag: 'free'
+        }}>
         {vegMeals.map((recipe) => {
             return (
-              <div key={recipe.id}>
+              <SplideSlide>
+              <div id="card" key={recipe.id}>
                 <p>{recipe.title}</p>
                 <p>{recipe.readyInMinutes}</p>
                 <img src={recipe.image} alt={recipe.title}/>
               </div>  
+              </SplideSlide>
             )
         })
         }
+        </Splide>
       </div>
     </div>
   )
