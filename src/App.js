@@ -1,9 +1,11 @@
 import Pages from "./views/Pages";
+import Category from "./components/Category";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <h1>Recipe Book</h1>
+      <Category/>
       <Pages/>
     </div>
   );
