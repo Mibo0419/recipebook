@@ -1,11 +1,12 @@
 import React from 'react'
 import {FaPizzaSlice, FaHamburger} from 'react-icons/fa';
 import {GiNoodles, GiChopsticks} from 'react-icons/gi';
+import '../components/Category.css';
 import { NavLink } from 'react-router-dom';
 
 function Category() {
   return (
-    <div>
+    <div id='category-wrapper'>
         <div>
             <FaPizzaSlice/>
             <h4>Italian</h4>
