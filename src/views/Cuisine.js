@@ -23,8 +23,10 @@ function Cuisine() {
         {cuisine.map((item) => {
             return(
                 <div>
+                    <Link to={'/recipe/' + item.id}>
                     <img src={item.image} alt={item.title} />
                     <h4>{item.title}</h4>
+                    </Link>
                 </div>
             )
         })}
