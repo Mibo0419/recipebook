@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "../components/PopularRecipes.css";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { Link } from "react-router-dom";
 
 function PopularRecipes() {
   const [popular, setPopular] = useState([]);
@@ -11,8 +12,8 @@ function PopularRecipes() {
   }, []);
 
   const getPopularRecipes = async () => {
-    const check = localStorage.getItem('popular');
-    if(check) {
+    const check = localStorage.getItem("popular");
+    if (check) {
       setPopular(JSON.parse(check));
     } else {
       const api = await fetch(
@@ -20,7 +21,7 @@ function PopularRecipes() {
       );
       const data = await api.json();
 
-      localStorage.setItem('popular', JSON.stringify(data.recipes));
+      localStorage.setItem("popular", JSON.stringify(data.recipes));
 
       setPopular(data.recipes);
       console.log(data);
@@ -31,19 +32,26 @@ function PopularRecipes() {
     <div>
       <div id="wrapper">
         <h3>Popular Recipes</h3>
-        <Splide options={{
-          perPage: 4, arrows: false, pagination: false, drag: 'free'
-        }}>
-        {popular.map((recipe) => {
-          return (
-            <SplideSlide>
-            <div id="card" key={recipe.id}>
-              <p>{recipe.title}</p>
-              <img src={recipe.image} alt={recipe.title} />
-            </div>
-            </SplideSlide>
-          );
-        })}
+        <Splide
+          options={{
+            perPage: 4,
+            arrows: false,
+            pagination: false,
+            drag: "free",
+          }}
+        >
+          {popular.map((recipe) => {
+            return (
+              <SplideSlide>
+                <div id="card" key={recipe.id}>
+                  <Link to={"/recipe/" + recipe.id}>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
+                  </Link>
+                </div>
+              </SplideSlide>
+            );
+          })}
         </Splide>
       </div>
     </div>
