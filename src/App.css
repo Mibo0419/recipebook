@@ -1,0 +1,21 @@
+.App {
+    margin: 20px;
+    background: white;
+    border-radius: 1rem;
+}
+
+#knife-fork {
+    font-size: 3rem;
+    margin-left: 2rem;
+}
+
+nav {
+    a {
+        font-size: 3rem;
+        text-decoration: none;
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        color: black
+    }
+}

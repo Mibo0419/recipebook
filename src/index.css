@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("C:\Users\mibo1\PROJECTS\Recipe-Book-App\recipebook\public\background.jpg");
 }
 
 code {
