@@ -31,7 +31,7 @@ function PopularRecipes() {
   return (
     <div>
       <div id="wrapper">
-        <h3>Popular Recipes</h3>
+        <h2>Popular Recipes</h2>
         <Splide
           options={{
             perPage: 4,
@@ -43,7 +43,7 @@ function PopularRecipes() {
           {popular.map((recipe) => {
             return (
               <SplideSlide>
-                <div id="card" key={recipe.id}>
+                <div id="popular-card" key={recipe.id}>
                   <Link to={"/recipe/" + recipe.id}>
                     <p>{recipe.title}</p>
                     <img src={recipe.image} alt={recipe.title} />
