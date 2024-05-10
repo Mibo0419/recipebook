@@ -1,5 +1,21 @@
-#category-wrapper {
+#inner-div {
+    text-align: center;
+}
+
+#links {
     display: flex;
     justify-content: center;
-    margin: 2rem 0rem;
+}
+  
+.single-link {
+    text-align: center; 
+    flex-grow: 1;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.single-link svg {
+    font-size: 26px; 
 }
