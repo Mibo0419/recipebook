@@ -15,8 +15,8 @@ function Search() {
   return (
     <form onSubmit={submitHandler}>
       <div>
-        <FaSearch/>
-        <input onChange={(e) => setInput(e.target.value)} type="text" value={input}/>
+        <FaSearch id="search-icon"/>
+        <input onChange={(e) => setInput(e.target.value)} type="text" value={input} placeholder="Search Recipes"/>
       </div>
     </form>
   );
