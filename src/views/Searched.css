@@ -1,0 +1,25 @@
+#searched-wrapper {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    margin: -10px; 
+}
+  
+.single-searched {
+    flex: 0 0 calc(20% - 20px); 
+    margin: 10px; 
+    border: 1px solid #ccc; 
+    padding: 10px;
+    text-align: center;
+}
+  
+@media (max-width: 768px) {
+    .single-cuisine {
+      flex: 0 0 calc(50% - 20px); 
+    }
+}
+
+h2 {
+    text-align: center;
+}
