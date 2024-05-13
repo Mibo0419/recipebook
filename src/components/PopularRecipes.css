@@ -1,29 +1,30 @@
-/* #wrapper {
-    margin: 4rem 3rem;
+#wrapper {
+  margin: 4rem 3rem;
 }
-
-#card {
-    min-height: 25rem;
-    border-radius: 2rem;
-    overflow: hidden;
-
-    img {
-      border-radius: 2rem;
-      width: 370px;  
-    }
-} */
 
 #popular-card {
   position: relative;
-  margin-bottom: 20px;
+  border-radius: 2rem;
+  overflow: hidden;
+  border: 2px solid #1847e7;
+
+  img {
+    border-radius: 2rem;
+    width: 100%;  
+  }
 }
 
 #popular-card p {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a background color for better readability */
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0px 10px 10px 10px;
   margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  box-sizing: border-box;
+  width: 100%;
 }

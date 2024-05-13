@@ -30,23 +30,22 @@ function VegMeals() {
 
   return (
     <div>
-      <div id="wrapper">
-        <h3>Vegetarian Meals</h3>
+      <div id="veg-wrapper">
+        <h2>Vegetarian Meals</h2>
         <Splide
           options={{
             perPage: 4,
-            arrows: false,
             pagination: false,
             drag: "free",
+            gap: "5px"
           }}
         >
           {vegMeals.map((recipe) => {
             return (
               <SplideSlide>
-                <div id="card" key={recipe.id}>
+                <div id="veg-card" key={recipe.id}>
                   <Link to={"/recipe/" + recipe.id}>
                     <p>{recipe.title}</p>
-                    <p>{recipe.readyInMinutes}</p>
                     <img src={recipe.image} alt={recipe.title} />
                   </Link>
                 </div>
