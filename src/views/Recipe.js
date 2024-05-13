@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "../views/Recipe.css";
 
 function Recipe() {
   let params = useParams();
   const [details, setDetails] = useState({});
-  const [activeTab, setActiveTab] = useState("instructions");
+  const [activeTab, setActiveTab] = useState("summary");
 
   const fetchDetails = async () => {
     const data = await fetch(
@@ -28,29 +29,37 @@ function Recipe() {
       </div>
       <div id="info-div">
         <button
-          className={activeTab === "instructions" ? "active" : ""}
-          onClick={() => setActiveTab("instructions")}
+          className={activeTab === "summary" ? "active" : ""}
+          onClick={() => setActiveTab("summary")}
         >
-          Instructions
+          Summary
         </button>
         <button
-          className={activeTab === "ingredients" ? "active" : ""}
-          onClick={() => setActiveTab("ingredients")}
+          className={activeTab === "directions" ? "active" : ""}
+          onClick={() => setActiveTab("directions")}
         >
-          Ingredients
+          Directions
         </button>
-        {activeTab === "instructions" && (
-          <div>
-            <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
-            <h3 dangerouslySetInnerHTML={{ __html: details.instructions }}></h3>
+        {activeTab === "summary" && (
+          <div id="summary-div">
+            <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
           </div>
         )}
-        {activeTab === "ingredients" && (
-          <ul>
-            {details.extendedIngredients.map((ingredient) => (
-              <li key={ingredient.id}>{ingredient.original}</li>
-            ))}
-          </ul>
+        {activeTab === "directions" && (
+          <div id="overall-div">
+            <div id="ingredients-div">
+              <h3>Recipe Ingredients:</h3>
+              <ul>
+                {details.extendedIngredients.map((ingredient) => (
+                  <li key={ingredient.id}>{ingredient.original}</li>
+                ))}
+              </ul>
+            </div>
+            <div id="instructions-div">
+              <h3>Instructions:</h3>
+            <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
+            </div>
+          </div>
         )}
       </div>
     </div>

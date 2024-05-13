@@ -1,0 +1,37 @@
+#recipe-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#recipe-wrapper > div {
+  margin-bottom: 20px;
+}
+
+#info-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.active {
+  background-color: #ccc;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd; 
+  border-radius: 8px; 
+}
+
+#summary-div, #overall-div {
+    padding: 0px 90px 90px 90px;
+}
+
